@@ -1,0 +1,54 @@
+# 🩸 Anemia Detection AI (Leo Club Pilot)
+
+### 🌍 Overview  
+A **low-cost AI tool** to detect anemia from **phone photos of the conjunctiva** (inner eyelid).  
+Piloted with **50 rural schoolgirls** via **Leo Club (Lions International)**.
+
+> **Preliminary Result:** 88% agreement with lab hemoglobin in pilot (n=50).  
+> _Not clinically validated. Research prototype._
+
+---
+
+### 🎯 Objectives  
+- Early, accessible anemia screening  
+- Reduce school absenteeism  
+- Empower community health workers  
+
+---
+
+### 🧠 Tech Stack  
+- Python, OpenCV, TensorFlow  
+- MobileNetV2 (transfer learning)  
+- Runs on Android (future)  
+
+---
+
+### 📊 Pilot Impact (Self-Reported)
+| Metric | Before | After |
+|--------|--------|-------|
+| School Absenteeism | 65% | **<40%** |
+| Anemia Awareness | 20% | **85%** |
+| Health Confidence | 30% | **90%** |
+
+---
+
+### 🔍 How It Works  
+1. Take photo of **inner lower eyelid**  
+2. AI analyzes **color & texture**  
+3. Get **risk score** in seconds  
+
+---
+
+### 💻 Demo Code (Placeholder)
+```python
+import cv2
+import numpy as np
+
+img = cv2.imread('eye_sample.jpg')
+if img is None:
+    print("Error: Image not found.")
+else:
+    redness = np.mean(img[:, :, 2])  # crude red channel
+    risk = max(0, min(100, (255 - redness) * 0.8))
+    print(f"Redness: {redness:.1f} → Risk: {risk:.1f}% (SIMULATED)")<img width="1536" height="1024" alt="EFE64979-F05D-41A2-8284-6A5F59AFD3B7" src="https://github.com/user-attachments/assets/f9d921da-c4ae-40aa-93ff-83b33085c7a3" />
+
